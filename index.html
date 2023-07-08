@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Lato', sans-serif;
+    }
+
+body {
+    width: 340px;
+}
+
+main {
+    position: relative;
+    user-select: none;
+    background-color: #eee;
+    border: 1px solid #ccc;   
+    border-radius: 10px;
+    padding: 5px 20px;
+    color: #4b4b4b;
+}
+
+caption {
+    font-weight: 700;
+    margin-block: 20px 10px;
+    font-family: sans-serif;
+    font-size: 18px;
+}
+
+table {
+    border-spacing: 0 20px;
+    width: 100%;
+
+}
+
+table img {
+    width: 24px;
+    vertical-align: bottom;
+}
+
+tr:nth-of-type(odd) {
+    background-color: #ddd;
+}
+
+th {
+    vertical-align: bottom;
+    font-size: 18px;
+    padding-block: 1%;
+    
+}
+td {
+    text-align: right;
+    padding-right: 2%;
+}
+
+th + th {
+   
+    text-align: center;     
+}
+
+table {    
+    margin: auto;
+}
+
+.datecell {
+  writing-mode:vertical-rl;
+  text-align: end;
+  direction: ltr;
+  rotate: 180deg;
+  background-color: #6a6a6a;
+  vertical-align: bottom;
+  word-spacing: 3px;
+  padding-bottom: 2%;
+  padding-left: 2%;
+  color: rgb(213, 213, 213);
+  font-weight: 900;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+col:first-of-type {
+    background-color: #6a6a6a;
+    width: 8%;    
+}
+col:first-of-type + col {
+    width: 25%;
+}
+col:nth-of-type(3) {
+    width: 40%;
+}
+
+col:last-of-type {
+    width: 45%;
+}
+
+.usd {
+    color: rgb(4, 159, 22);
+}
+.eur {
+    color: rgb(4, 82, 159);
+}
+.gbp {
+    color: rgb(174, 16, 16);
+}
+.cad {
+    color: rgb(108, 200, 223);
+}
+.chf {
+    color: rgb(201, 136, 15);
+}
+.gel {
+    color: rgb(176, 15, 201);
+}
+th.btc {
+    color: rgb(225, 7, 7);
+}
+
+hr {
+    width: 60%;
+    position: absolute;
+    height: 1px;
+    z-index: -1;
+    inset: 4px 0 0 0;
+    margin: auto;
+}
+
+.clock {
+    text-align: center;
+    position: relative;
+    isolation: isolate;
+}
+
+
+.clock > p {
+    background-color: #eee;
+    width: fit-content;
+    margin: 0 auto;
+    padding-inline: 3px;
+}
+
+.dialog {
+    width: 70%;
+    border: none;    
+    border-radius: 15px;
+    inset: 0;
+    margin: auto;
+    padding: 22px;
+    font-size: 14px;
+    position: absolute;
+    z-index: 4;
+    isolation: isolate;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.246);
+    backdrop-filter: blur(5px);
+    height: 220px;
+    font-weight: 500;
+    color: whitesmoke;
+}
+
+.dialog  p:first-of-type{
+    margin-bottom: 12px;
+    font-size: 17px;
+}
+.dialog input{
+    background-color: transparent;
+    color: whitesmoke;
+    padding: 4px 10px;
+    font-size: 17px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    user-select: none;
+    text-align: center;
+}
+.dialog  input:hover{
+    scale: 1.0325;
+}
+.dialog  input:active{
+    scale: 1;
+}
+.author {
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+    font-size: 10px;
+    text-align: right;
+    width: 100%;
+}
+
+.veil {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.116);
+    z-index: 3;
+}
+</style>
+
+
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+
+    <main>
+         <table>
+            <caption>
+                Հայկական ֏ դրամ vs...
+            </caption>
+        <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+        </colgroup>
+            <tr>
+               <td class="datecell" rowspan="8">
+            
+               </td>
+                <th> <img src="icons/USD.png" alt=""> USD</th>
+                <th class="usd">$</th>
+                <td>Loading...</td>
+            </tr>
+            <tr>
+                <th> <img src="icons/EUR.png" alt=""> EUR</th>
+                <th class="eur">€</th>
+                <td>Loading...</td>
+            </tr>
+            <tr>
+                <th> <img src="icons/GBP.png" alt=""> GBP</th>
+                <th class="gbp">£</th>
+                <td>Loading...</td>
+            </tr>
+            <tr>
+                <th> <img src="icons/CAD.png" alt=""> CAD</th>
+                <th class="cad">﹩</th>
+                <td>Loading...</td>
+            </tr>
+            <tr>
+                <th> <img src="icons/CHF.png" alt=""> CHF</th>
+                <th class="chf">₣</th>
+                <td>Loading...</td>
+            </tr>
+            <tr>
+                <th> <img src="icons/RUR.png" alt=""> RUR</th>
+                <th class="rur">₽</th>
+                <td>Loading...</td>
+            </tr>
+            <tr>
+                <th> <img src="icons/GEL.png" alt=""> GEL</th>
+                <th class="gel">ლ</th>
+                <td>Loading...</td>
+            </tr>
+        </table>
+        <div class="clock">
+            <p></p>
+            <hr>
+        </div>
+        <table>
+                <colgroup>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                </colgroup>
+                    <tr class="btc">
+                       <td class="datecell">                    
+                       </td>
+                        <th> <img src="icons/btc.png" alt=""> BTC</th>
+                        <th class="btc">₿</th>
+                        <td>Loading...</td>
+                    </tr>     
+        </table>
+    </main>
+
+
+</body>
+</html>
