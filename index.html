@@ -17,58 +17,59 @@
     }
 
 body {
-    width: 340px;
+    width: 320px;
 }
 
 main {
     position: relative;
     user-select: none;
-    background-color: #eee;
-    border: 1px solid #ccc;   
-    border-radius: 10px;
-    padding: 5px 20px;
-    color: #4b4b4b;
+    background-color: #121212;
+    border: 1px solid #ccc;
+    padding: 5px 20px 15px 0;
+    color: #cdcdcd;
 }
 
 caption {
-    font-weight: 700;
-    margin-block: 20px 10px;
-    font-family: sans-serif;
-    font-size: 18px;
+	padding-left: 20px;
+    margin-block: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
 }
 
 table {
-    border-spacing: 0 20px;
     width: 100%;
-
+	border-collapse: collapse;
 }
 
-table img {
-    width: 24px;
-    vertical-align: bottom;
+img, span {
+    vertical-align: middle;
 }
 
-tr:nth-of-type(odd) {
-    background-color: #ddd;
+img {
+	width: 20px;
+	border-radius: 6px;
+	margin-right: 4px;
+}
+tr:nth-child(odd) {
+    background-color: #242424;
 }
 
 th {
-    vertical-align: bottom;
-    font-size: 18px;
-    padding-block: 1%;
-    
+    font-size: 0.8em;
+	font-weight: 300;
+    padding-block: 8px;
+	vertical-align: middle;
 }
 td {
     text-align: right;
-    padding-right: 2%;
+    padding-right: 4%;
 }
 
 th + th {
-   
-    text-align: center;     
+    text-align: center;
 }
 
-table {    
+table {
     margin: auto;
 }
 
@@ -77,25 +78,27 @@ table {
   text-align: end;
   direction: ltr;
   rotate: 180deg;
-  background-color: #6a6a6a;
+  background-color: #121212;
   vertical-align: bottom;
   word-spacing: 3px;
   padding-bottom: 2%;
   padding-left: 2%;
-  color: rgb(213, 213, 213);
-  font-weight: 900;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #777;
+  font-weight: 300;
+  font-size: 0.8em;
+  font-family: Calibri, sans-serif;
 }
 
 col:first-of-type {
     background-color: #6a6a6a;
-    width: 8%;    
+    width: 8%;
 }
 col:first-of-type + col {
     width: 25%;
 }
 col:nth-of-type(3) {
     width: 40%;
+
 }
 
 col:last-of-type {
@@ -104,24 +107,32 @@ col:last-of-type {
 
 .usd {
     color: rgb(4, 159, 22);
+    color: oklab(0.6 -0.18 0.14);
 }
 .eur {
-    color: rgb(4, 82, 159);
+    color: rgb(19, 117, 216);
+    color: oklab(0.52 -0.05 -0.19);
 }
 .gbp {
-    color: rgb(174, 16, 16);
+    color: rgb(232, 39, 39);
+    color: oklab(0.68 0.23 0.12);
 }
 .cad {
-    color: rgb(108, 200, 223);
+    color: rgb(90, 204, 236);
+    color: oklab(0.7 -0.11 -0.1);
 }
 .chf {
-    color: rgb(201, 136, 15);
+    color: rgb(237, 168, 40);
+    color: oklab(0.73 0.05 0.16);
 }
 .gel {
-    color: rgb(176, 15, 201);
+    color: rgb(218, 71, 241);
+    color: oklab(0.7 0.23 -0.18);
+
 }
 th.btc {
-    color: rgb(225, 7, 7);
+    color: rgb(241, 222, 9);
+    color: oklab(0.86 -0.04 0.2);
 }
 
 hr {
@@ -131,17 +142,23 @@ hr {
     z-index: -1;
     inset: 4px 0 0 0;
     margin: auto;
+	border-color: #444;
 }
 
 .clock {
     text-align: center;
+	line-height: 50px;
     position: relative;
     isolation: isolate;
+	margin-left: 20px;
 }
 
 
 .clock > p {
-    background-color: #eee;
+	height: 50px;
+    background-color: #121212;
+	color: #777;
+	font-size: 0.8em;
     width: fit-content;
     margin: 0 auto;
     padding-inline: 3px;
@@ -149,62 +166,45 @@ hr {
 
 .dialog {
     width: 70%;
-    border: none;    
+    border: none;
     border-radius: 15px;
     inset: 0;
     margin: auto;
     padding: 22px;
     font-size: 14px;
     position: absolute;
-    z-index: 4;
-    isolation: isolate;
+    z-index: 1;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.246);
+    background-color: rgba(159, 159, 159, 0.24);
     backdrop-filter: blur(5px);
-    height: 220px;
-    font-weight: 500;
-    color: whitesmoke;
+    color: #dfdfdf;
+    height: min-content;
 }
 
-.dialog  p:first-of-type{
-    margin-bottom: 12px;
-    font-size: 17px;
+.info {
+    margin-bottom: 18px;
+    font-size: 14px;
 }
 .dialog input{
     background-color: transparent;
-    color: whitesmoke;
+    color: #cdcdcd;
     padding: 4px 10px;
-    font-size: 17px;
+    font-size: 14px;
     border-radius: 10px;
     cursor: pointer;
-    border: 1px solid #ddd;
+    border: 1px solid #777;
     user-select: none;
     text-align: center;
+    margin-bottom: 24px;
 }
 .dialog  input:hover{
-    scale: 1.0325;
-}
-.dialog  input:active{
-    scale: 1;
-}
-.author {
-    position: absolute;
-    bottom: 10px;
-    right: 12px;
-    font-size: 10px;
-    text-align: right;
-    width: 100%;
+    border-color: #cdcdcd;
 }
 
-.veil {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.116);
-    z-index: 3;
+.author {
+    font-size: 10px;
 }
+
 </style>
 
 
@@ -223,41 +223,41 @@ hr {
             <col>
             <col>
         </colgroup>
-            <tr>
+            <tr title="ԱՄՆ դոլար">
                <td class="datecell" rowspan="8">
-            
+
                </td>
-                <th> <img src="icons/USD.png" alt=""> USD</th>
+                <th> <img src="icons/USD.png" alt=""> <span>USD</span></th>
                 <th class="usd">$</th>
                 <td>Loading...</td>
             </tr>
-            <tr>
-                <th> <img src="icons/EUR.png" alt=""> EUR</th>
+            <tr title="Եվրո">
+                <th> <img src="icons/EUR.png" alt=""> <span>EUR</span></th>
                 <th class="eur">€</th>
                 <td>Loading...</td>
             </tr>
-            <tr>
-                <th> <img src="icons/GBP.png" alt=""> GBP</th>
+            <tr title="Բրիտանական ֆունտ">
+                <th> <img src="icons/GBP.png" alt=""> <span>GBP</span></th>
                 <th class="gbp">£</th>
                 <td>Loading...</td>
             </tr>
-            <tr>
-                <th> <img src="icons/CAD.png" alt=""> CAD</th>
+            <tr title="Կանադական դոլար">
+                <th> <img src="icons/CAD.png" alt=""> <span>CAD</span></th>
                 <th class="cad">﹩</th>
                 <td>Loading...</td>
             </tr>
-            <tr>
-                <th> <img src="icons/CHF.png" alt=""> CHF</th>
+            <tr title="Շվեյցարական ֆրանկ">
+                <th> <img src="icons/CHF.png" alt=""> <span>CHF</span></th>
                 <th class="chf">₣</th>
                 <td>Loading...</td>
             </tr>
-            <tr>
-                <th> <img src="icons/RUR.png" alt=""> RUR</th>
+            <tr title="Ռուսական ռուբլի">
+                <th> <img src="icons/RUR.png" alt=""> <span>RUR</span></th>
                 <th class="rur">₽</th>
                 <td>Loading...</td>
             </tr>
-            <tr>
-                <th> <img src="icons/GEL.png" alt=""> GEL</th>
+            <tr title="Վրացական լարի">
+                <th> <img src="icons/GEL.png" alt=""> <span>GEL</span></th>
                 <th class="gel">ლ</th>
                 <td>Loading...</td>
             </tr>
@@ -273,13 +273,13 @@ hr {
                     <col>
                     <col>
                 </colgroup>
-                    <tr class="btc">
-                       <td class="datecell">                    
+                    <tr title="Բիթքոին" class="btc">
+                       <td class="datecell">
                        </td>
-                        <th> <img src="icons/btc.png" alt=""> BTC</th>
+                        <th> <img src="icons/btc.png" alt=""> <span>BTC</span></th>
                         <th class="btc">₿</th>
                         <td>Loading...</td>
-                    </tr>     
+                    </tr>
         </table>
     </main>
 

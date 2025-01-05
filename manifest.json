@@ -1,6 +1,6 @@
 {
     "name": "DramFlow",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "manifest_version": 3,
     "description": "Unleash the Power of Currency Exchange with Armenian Dram",
     "author": "https://github.com/Emil-babayan",
@@ -14,5 +14,4 @@
         "default_icon": "icons/128.png",
         "default_popup": "index.html"
     }
-
 }
